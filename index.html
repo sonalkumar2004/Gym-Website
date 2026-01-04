@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Online Quiz Maker</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<header>
+  <h1>🧠 Quiz Maker</h1>
+  <button id="logoutBtn">Logout</button>
+</header>
+
+<!-- AUTH SECTION -->
+<section id="authSection">
+  <h2>Login / Register</h2>
+  <input type="text" id="username" placeholder="Username">
+  <button onclick="login()">Login</button>
+</section>
+
+<!-- HOME -->
+<section id="homeSection" class="hidden">
+  <h2>Welcome <span id="userName"></span></h2>
+  <button onclick="showCreateQuiz()">Create Quiz</button>
+  <button onclick="showQuizList()">Take Quiz</button>
+</section>
+
+<!-- CREATE QUIZ -->
+<section id="createQuizSection" class="hidden">
+  <h2>Create Quiz</h2>
+  <input type="text" id="quizTitle" placeholder="Quiz Title">
+
+  <input type="text" id="question" placeholder="Question">
+  <input type="text" id="opt1" placeholder="Option 1">
+  <input type="text" id="opt2" placeholder="Option 2">
+  <input type="text" id="opt3" placeholder="Option 3">
+  <input type="text" id="opt4" placeholder="Option 4">
+  <input type="number" id="correct" placeholder="Correct Option (1-4)">
+
+  <button onclick="addQuestion()">Add Question</button>
+  <button onclick="saveQuiz()">Save Quiz</button>
+  <button onclick="goHome()">Back</button>
+</section>
+
+<!-- QUIZ LIST -->
+<section id="quizListSection" class="hidden">
+  <h2>Available Quizzes</h2>
+  <div id="quizList"></div>
+  <button onclick="goHome()">Back</button>
+</section>
+
+<!-- TAKE QUIZ -->
+<section id="takeQuizSection" class="hidden">
+  <h2 id="quizTitleDisplay"></h2>
+  <div id="questionBox"></div>
+  <button onclick="nextQuestion()">Next</button>
+</section>
+
+<!-- RESULT -->
+<section id="resultSection" class="hidden">
+  <h2>Your Score</h2>
+  <p id="scoreDisplay"></p>
+  <button onclick="goHome()">Back to Home</button>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
